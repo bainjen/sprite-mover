@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useWalk = (maxSteps) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [direction, setDirection] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [step, setStep] = useState(0);
 
   const stepSize = { x: 32, y: 36 };
@@ -14,10 +14,10 @@ const useWalk = (maxSteps) => {
   };
 
   const directions = {
-    down: 0,
-    left: 1,
-    right: 2,
-    up: 3,
+    down: 2,
+    left: 3,
+    right: 1,
+    up: 0,
   };
 
   const move = (dir) => {

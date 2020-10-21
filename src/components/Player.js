@@ -16,8 +16,8 @@ const Player = (props) => {
       image="healer_f"
       pos={position}
       data={{
-        yPos: 72,
-        xPos: 0,
+        yPos: direction * 36,
+        xPos: step * 32,
         h: 36,
         w: 32,
       }}
