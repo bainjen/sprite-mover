@@ -3,7 +3,7 @@ import React from "react";
 const Scene = (props) => {
   const { sceneNum } = props; 
   return (
-    <div>scene {sceneNum}</div>
+    <div>scene this is scene one{sceneNum}</div>
   )
 }
 

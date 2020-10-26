@@ -3,6 +3,8 @@ import Sprite from "./Sprite";
 import useKeyPress from "../hooks/useKeyPress";
 import useWalk from "../hooks/useWalk";
 
+//player in absolute position will scale with map relative to the item it is contained in 
+
 const Player = (props) => {
   const { direction, step, walk, position } = useWalk(3, props.setShowButton);
   console.log(position); 

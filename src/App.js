@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 // import Player from "./components/Player";
-import Map from "./components/Map"; 
-import Scene from "./components/Scene"; 
+// import Map from "./components/Map";
+// import Scene from "./components/Scene";
+import Frame from "./components/Frame";
+import Left from "./components/Left";
 
 function App() {
-  const [showScene, setShowScene] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+
+  const [counter, setCounter] = useState(0);
+  //counter is an example of persistent state
 
   return (
     <div className="App">
-      {showScene ? <Scene sceneNum={1}/> : <Map setShowButton={setShowButton}/>}
-      <button style={{position: "absolute", display: showButton ? "block" : "none"}} onClick={() => setShowScene(!showScene)}>change</button>
+      <Frame />
+      <button onClick={() => setCounter((prev) => prev + 1)}>{counter}</button>
     </div>
   );
 }
