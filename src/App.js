@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      {showScene ? <Scene /> : <Map setShowButton={setShowButton}/>}
+      {showScene ? <Scene sceneNum={1}/> : <Map setShowButton={setShowButton}/>}
       <button style={{position: "absolute", display: showButton ? "block" : "none"}} onClick={() => setShowScene(!showScene)}>change</button>
     </div>
   );
