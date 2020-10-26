@@ -5,11 +5,12 @@ import Scene from "./components/Scene";
 
 function App() {
   const [showScene, setShowScene] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   return (
     <div className="App">
-      {showScene ? <Scene /> : <Map />}
-      <button style={{position: "absolute"}} onClick={() => setShowScene(!showScene)}>change</button>
+      {showScene ? <Scene /> : <Map setShowButton={setShowButton}/>}
+      <button style={{position: "absolute", display: showButton ? "block" : "none"}} onClick={() => setShowScene(!showScene)}>change</button>
     </div>
   );
 }

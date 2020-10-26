@@ -4,7 +4,7 @@ import useKeyPress from "../hooks/useKeyPress";
 import useWalk from "../hooks/useWalk";
 
 const Player = (props) => {
-  const { direction, step, walk, position } = useWalk(3);
+  const { direction, step, walk, position } = useWalk(3, props.setShowButton);
   console.log(position); 
   useKeyPress((event) => {
     event.preventDefault();

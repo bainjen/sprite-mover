@@ -7,7 +7,7 @@ import { useState } from "react";
 //(48, 688) (3, 43)
 //(64, 688) (4. 43)
 //(64, 672) (4, 42)
-//(64, 656) (4, 41)
+//(64, 656) (4, 41) first house, bottom left of map
 //(80, 656) (5, 41)
 //(96, 656) (6, 41)
 //(112, 656) (7, 41)
@@ -21,8 +21,8 @@ const createData = () => {
     let row = [];
 
     for (let j = 0; j < 67; j++) {
-      //column object dictates where player can walk. 
-      //could also make keys that are triggers for entry into a new scene 
+      //column object dictates where player can walk.
+      //could also make keys that are triggers for entry into a new scene
       let column = {};
       if (
         (i === 0 && j === 43) ||
@@ -41,16 +41,17 @@ const createData = () => {
     }
     data.push(row);
   }
+  data[4][41].scene = true;
   return data;
 };
 
-const useWalk = (maxSteps) => {
+const useWalk = (maxSteps, setShowButton) => {
   const [position, setPosition] = useState({ x: 0, y: 688 });
   const [direction, setDirection] = useState(1);
   const [step, setStep] = useState(0);
 
   const mapData = createData();
-
+  console.log(mapData[4][41]);
   const bounds = {
     minX: 0,
     maxX: mapData.length,
@@ -90,6 +91,7 @@ const useWalk = (maxSteps) => {
       const potentialMapPosition = mapData[newMapPositionX][newMapPositionY];
 
       if (potentialMapPosition.walkable) {
+        potentialMapPosition.scene ? setShowButton(true) : setShowButton(false);
         setPosition((prev) => ({
           x: prev.x + modifier[dir].x,
           y: prev.y + modifier[dir].y,

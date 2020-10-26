@@ -10,10 +10,10 @@ const MapDiv = styled.div`
   height: 800px;
   background-image: url(/assets/overWorld.jpeg); 
 `
-const Map = () => {
+const Map = (props) => {
   return (
     <MapDiv>
-      <Player></Player>
+      <Player setShowButton={props.setShowButton}></Player>
     </MapDiv>
   )
 };
