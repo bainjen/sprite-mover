@@ -7,13 +7,13 @@ import Left from "./components/Left";
 
 function App() {
 
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
   //counter is an example of persistent state
 
   return (
     <div className="App">
       <Frame />
-      <button onClick={() => setCounter((prev) => prev + 1)}>{counter}</button>
+      {/* <button onClick={() => setCounter((prev) => prev + 1)}>{counter}</button> */}
     </div>
   );
 }
