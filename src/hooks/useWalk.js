@@ -5,7 +5,7 @@ const useWalk = (maxSteps) => {
   const [direction, setDirection] = useState(1);
   const [step, setStep] = useState(0);
 
-  const stepSize = { x: 32, y: 36 };
+  const stepSize = { x: 16, y: 16 };
   const modifier = {
     down: { x: 0, y: stepSize.y },
     up: { x: 0, y: -stepSize.y },
