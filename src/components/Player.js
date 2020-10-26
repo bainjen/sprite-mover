@@ -13,7 +13,7 @@ const Player = (props) => {
   });
   return (
     <Sprite
-      image="healer_f"
+      image="ranger_f"
       pos={position}
       data={{
         yPos: direction * 36,
