@@ -21,11 +21,17 @@ const createData = () => {
     let row = [];
 
     for (let j = 0; j < 67; j++) {
+      //column object dictates where player can walk. 
+      //could also make keys that are triggers for entry into a new scene 
       let column = {};
       if (
         (i === 0 && j === 43) ||
         (i === 1 && j === 43) ||
-        (i === 2 && j === 43)
+        (i === 2 && j === 43) ||
+        (i === 3 && j === 43) ||
+        (i === 4 && j === 43) ||
+        (i === 4 && j === 42) ||
+        (i === 4 && j === 41)
       ) {
         column.walkable = true;
       } else {

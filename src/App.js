@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import Player from "./components/Player";
+// import Player from "./components/Player";
 import Map from "./components/Map"; 
+import Scene from "./components/Scene"; 
 
 function App() {
-  const [xPos, setXPos] = useState(0);
+  const [showScene, setShowScene] = useState(false);
+
   return (
     <div className="App">
-      {/* <Player /> */}
-      <Map/>
+      {showScene ? <Scene /> : <Map />}
+      <button style={{position: "absolute"}} onClick={() => setShowScene(!showScene)}>change</button>
     </div>
   );
 }
